@@ -71,7 +71,7 @@ checkpoint_name = 'Weights-{epoch:03d}--{val_loss:.5f}.hdf5'
 checkpoint = ModelCheckpoint(checkpoint_name, monitor='val_loss', verbose = 1, save_best_only = True, mode ='auto')
 callbacks_list = [checkpoint]
 
-my_model.fit(Xdata_train, Ydata_train, epochs=500, batch_size=32, validation_split = 0.2, callbacks=callbacks_list)
+my_model.fit(Xdata_train, Ydata_train, epochs=500, batch_size=32, validation_split = 0.1, callbacks=callbacks_list)
 
 
 # Load wights file of the best model :

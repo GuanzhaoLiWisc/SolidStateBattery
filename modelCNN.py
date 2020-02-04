@@ -17,7 +17,7 @@ import readdata
 
 #model setup
 my_model= Sequential()
-my_model.add(Conv3D(64, (3,3,3), activation='relu',input_shape=(64,64, 64,3))) # first CNN layer
+my_model.add(Conv3D(64, (3,3,3), activation=' relu',input_shape=(64,64, 64,3))) # first CNN layer
 my_model.add(Conv3D(32, (3,3,3), activation='relu'))# second CNN layer
 my_model.add(MaxPooling3D(pool_size=(2, 2, 2), strides=None, padding='valid', data_format=None)) # maxPooling
 
@@ -47,7 +47,7 @@ heckpoint_name = 'Weights-{epoch:03d}--{val_loss:.5f}.hdf5'
 checkpoint = ModelCheckpoint(checkpoint_name, monitor='val_loss', verbose = 1, save_best_only = True, mode ='auto')
 callbacks_list = [checkpoint]
 
-my_model.fit_generator(train_generator, test_generator, epochs=500, validation_split = 0.2, callbacks=callbacks_list)
+my_model.fit_generator(train_generator, test_generator, epochs=500, validation_split = 0.1, callbacks=callbacks_list)
 # Load wights file of the best model :
 wights_file = 'Weights-478--18738.19831.hdf5' # choose the best checkpoint 
 NN_model.load_weights(wights_file) # load it
