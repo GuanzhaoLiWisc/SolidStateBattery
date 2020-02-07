@@ -70,16 +70,16 @@ Ydata_test=Ydata[-1:]
 
 #main
 checkpoint_name = 'Weights-{epoch:03d}--{val_loss:.5f}.hdf5' 
-checkpoint = ModelCheckpoint(checkpoint_name, monitor='val_loss', verbose = 1, save_best_only = True, mode ='auto')
+checkpoint = ModelCheckpoint(checkpoint_name, monitor='val_loss', verbose = 1, save_best_only = True, mode ='auto',period=1)
 callbacks_list = [checkpoint]
 
 
 print(Xdata_train.shape)
 print(Ydata_train.shape)
-my_model.fit(Xdata_train, Ydata_train)# epochs=500, batch_size=32, validation_split = 0.1) #callbacks=callbacks_list)
+my_model.fit(Xdata_train, Ydata_train, epochs=500, batch_size=32, validation_split = 0.1, callbacks=callbacks_list)
 
 #
 ## Load wights file of the best model :
 wights_file = 'Weights-478--18738.19831.hdf5' # choose the best checkpoint 
-NN_model.load_weights(wights_file) # load it
-NN_model.compile(loss='mean_absolute_error', optimizer='adam', metrics=['mean_absolute_error'])
+my_model.load_weights(wights_file) # load it
+my_model.compile(loss='mean_absolute_error', optimizer='adam', metrics=['mean_absolute_error'])
