@@ -41,7 +41,10 @@ def load_Ydata(number=100):
             Ydata[i,0]=np.asarray(sample[:],dtype=np.float64)
             
     return Ydata
-
+    
+def get_Another_Var():
+    var= 1
+    return var 
 
 #CNN model set
 my_model= Sequential()
@@ -52,8 +55,8 @@ my_model.add(MaxPooling3D(pool_size=(2, 2, 2), strides=None, padding='valid', da
 my_model.add(Flatten())
 my_model.add(Dense(16, activation= "softmax")) # fully connected layer, output probablities
 my_model.add(Dense(1, activation="softmax"))
+keras.layers.Concatenate([my_model, get_Another_Var()]) # add another varaible in the fully connected layer
 my_model.compile(optimizer='adam', loss='mean_squared_error', metrics=['accuracy'])
-    
 my_model.summary()
 
 #load data
