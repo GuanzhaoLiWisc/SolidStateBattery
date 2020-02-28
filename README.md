@@ -1,4 +1,4 @@
-# Ionic conductivity prediction of composite solid electrolyte based on Convolutional Neural Network
+# Ionic Conductivity Prediction of Composite Solid Electrolyte Based on Convolutional Neural Network
 
 This repo contains code base of 3D Convolutional Neural Network for the microstructure-property prediction of composite solid electrolyte
 
