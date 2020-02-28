@@ -30,7 +30,11 @@ tar -xzvf structure.tar.gz
 bash Miniconda3-latest-Linux-x86_64.sh
 source .bashrc
 ```
-5. Submit jobs on Euler
+5. create conda environment
+```
+conda create --name solidStateBattery python=3.6
+```
+6. Submit jobs on Euler
 ```
 sbatch subJob.sh
 ```
