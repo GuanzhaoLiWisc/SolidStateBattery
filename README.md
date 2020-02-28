@@ -28,6 +28,7 @@ tar -xzvf structure.tar.gz
 4. Download and Install Miniconda on Euler
 ```
 bash Miniconda3-latest-Linux-x86_64.sh
+source .bashrc
 ```
 5. Submit jobs on Euler
 ```
