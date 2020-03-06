@@ -20,7 +20,7 @@ from keras.models import load_model
 
 my_model = load_model("Weights-001--0.99646.hdf5")
 adam= keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, amsgrad=False)
-my_model.compile(loss='mean_absolute_error', optimizer=adam, metrics=['mean_absolute_error'])
+my_model.compile(loss='mean_squared_error', optimizer=adam, metrics=['accuracy'])
 #function for loading data
 #loading microstructure 
 def load_X1data(number=100,dim=100):
